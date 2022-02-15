@@ -1,0 +1,49 @@
+----------------------------------------------
+Stock number exercise:
+----------------------------------------------
+
+This exercise consist in two parts, the first one is creating the functions to read a csv file.
+This function will be used in the second part to create some stock numbers for artworks.
+Feel free to change the args and kwargs of the example functions below, these are only meant as a guide and they 
+can be split in more functions to make it easier to undestand.
+
+
+1. Create the functions to read the csv file in '/lib/csv'.
+	
+	csv_to_rows: Converts csv file to list of dicts.
+	rows_to_csv: Takes list of dictionaries and filepath and outputs a spreadsheet
+	Feel free to add more functionsn to make the code more clear and use any external library like pandas, csv, ...
+
+
+
+2. Generate a new spreadsheet with new stock numbers for the existing artworks and all the data from the csv?
+
+	A sock number tends to consist of 2 parts:
+	
+		SA 001
+	
+	The first part is the prefix (SA)
+	The second part is the number part (001).
+	It is important that these are unique as we use these to identify artworks. 
+	
+	Using the functions you have made in the previous exercise, create the code for create_new_stock_numbers.
+	
+	The new prefix created should follow this pattern:
+	
+		first letter of the artist's first name
+		first letter of the artist's last name
+	
+	
+	e.g.
+		Kadeem Darzi, 'KAD 001' ----> new stock number = 'KD 001'
+		Kadeem Darzi 'KAD 0002' ----> new stock number = 'KD 002'
+		James Perrogi 'JAM 001' = 'JP 001'
+
+	General things to consider:
+
+		What if the artist only has one name e.g. 'Cher' (you will need to consider a rule to try and create a sensible prefix for this 'CH')
+		What if the artist has multiple names e.g. 'Johnn F Kennedy' (perhaps a sensible prefix would be 'JK')
+		Two artists can not have the same prefix, 
+			Kadeem Darzi, 'KD 001'
+			Katherine Dean, 'KA 001' (taking the next letter of the name and check is unique again)
+	
